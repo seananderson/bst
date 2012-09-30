@@ -1,3 +1,4 @@
+%% BioScience BibTeX style by Sean C. Anderson
 %%
 %% This is file `bioscience.bst',
 %% generated with the docstrip utility.
@@ -6,7 +7,7 @@
 %%
 %% merlin.mbs  (with options: `ay,nat,nm-rvx,ed-rev,jnrlst,nmlm,x10,x0,m10,m0,keyxyr,dt-beg,yr-per,note-yr,jxper,jttl-rm,vnum-x,pp-last,num-xser,jnm-x,btit-rm,bt-rm,bkpg-x,add-pub,in-x,ed,abr,xedn,and-xcom,xand,etal-xc,url,url-blk,nfss,')
 %% ----------------------------------------
-%% *** For Bioscience. ***
+%% *** For BioScience. ***
 %% 
 %% Copyright 1994-2007 Patrick W Daly
  % ===============================================================
