@@ -9,6 +9,14 @@ I haven't tested these .bst files extensively, but they were adequate for my
 needs writing manuscripts for these journals. They have mostly been tested with
 journal articles, technical reports, and books.
 
+Current journals included:
+- BioScience
+- Canadian Journal of Fisheries and Aquatic Sciences
+- ICES Journal of Marine Science
+- Journal of Crustacean Biology
+- Methods in Ecology and Evolution
+- Trends in Ecology and Evolution
+
 These files are licensed under the [The LaTeX Project Public License].
 
 [custom-bib]: http://www.ctan.org/tex-archive/macros/latex/contrib/custom-bib/
