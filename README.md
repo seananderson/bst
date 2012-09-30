@@ -1,4 +1,4 @@
-# BibTeX style files for ecology journals
+# BibTeX Style Files for Ecology Journals
 
 I created these .bst files using the [custom-bib] package for LaTeX. Where
 I could find my copy of the .dbj file I have included it as well. If you need
