@@ -1,3 +1,5 @@
+%% BibTeX style file for Frontiers in Ecology and the Environment
+%% Created by Sean C. Anderson on 2013-08-30
 %%
 %% This is file `frontiersecolenv.bst',
 %% generated with the docstrip utility.
