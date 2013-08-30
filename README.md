@@ -15,6 +15,7 @@ Current journals included:
 - ICES Journal of Marine Science
 - Journal of Crustacean Biology
 - Methods in Ecology and Evolution
+- Frontiers in Ecology and the Environment
 - Trends in Ecology and Evolution
 
 These files are licensed under the [The LaTeX Project Public License].
