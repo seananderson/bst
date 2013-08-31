@@ -133,9 +133,9 @@ End of customized bst file
   mcite,%: Some other truncation scheme
 %--------------------
 %MAX AUTHORS BEFORE ET AL: (if regular cite not selected)
-% mct-1,%: One et al
+ mct-1,%: One et al
 % mct-2,%: One, Two et al
-  mct-3,%: One, Two, Three et al
+% mct-3,%: One, Two, Three et al
 % mct-4,%: One, Two, Three, Four et al
 % mct-5,%: One, Two, Three, Four, Five et al
 %--------------------
