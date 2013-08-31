@@ -140,9 +140,9 @@ End of customized bst file
 % mct-5,%: One, Two, Three, Four, Five et al
 %--------------------
 %MAX AUTHORS WITHOUT ET AL: (if regular cite not selected)
-% mct-x2,%: Two authors without truncating
+ mct-x2,%: Two authors without truncating
 % mct-x3,%: Three authors
-  mct-x4,%: Four authors
+% mct-x4,%: Four authors
 % mct-x5,%: Five authors
 %--------------------
 %TYPEFACE FOR AUTHORS IN LIST OF REFERENCES:

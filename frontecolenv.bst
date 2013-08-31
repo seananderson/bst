@@ -4,7 +4,7 @@
 %%
 %% The original source files were:
 %%
-%% merlin.mbs  (with options: `ay,nat,nm-rvx,ed-rev,jnrlst,nmlm,x4,m3,mcite,mct-1,mct-x4,keyxyr,dt-beg,yr-per,note-yr,jxper,vol-bf,vnum-x,volp-sp,num-xser,jnm-x,btit-rm,bt-rm,add-pub,edparxc,bkedcap,in-col,ppx,ed,xedn,jabr,etal-it,nfss,')
+%% merlin.mbs  (with options: `ay,nat,nm-rvx,ed-rev,jnrlst,nmlm,x4,m3,mcite,mct-1,mct-x2,keyxyr,dt-beg,yr-per,note-yr,jxper,vol-bf,vnum-x,volp-sp,num-xser,jnm-x,btit-rm,bt-rm,add-pub,edparxc,bkedcap,in-col,ppx,ed,xedn,jabr,etal-it,nfss,')
 %% ----------------------------------------
 %% ***  ***
 %% 
@@ -1199,7 +1199,7 @@ FUNCTION {format.lab.names}
       nameptr #1 >
         {
           nameptr #2 =
-          numnames #4 > and
+          numnames #2 > and
             { "others" 't :=
               #1 'namesleft := }
             'skip$
