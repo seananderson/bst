@@ -10,13 +10,14 @@ needs writing manuscripts for these journals. They have mostly been tested with
 journal articles, technical reports, and books.
 
 Current journals included:
-- BioScience
-- Canadian Journal of Fisheries and Aquatic Sciences
-- ICES Journal of Marine Science
-- Journal of Crustacean Biology
-- Methods in Ecology and Evolution
-- Frontiers in Ecology and the Environment
-- Trends in Ecology and Evolution
+- BioScience `bioscience.bst`
+- Canadian Journal of Fisheries and Aquatic Sciences `cjfas.bst`
+- Frontiers in Ecology and the Environment `frontecolenv.bst`
+- ICES Journal of Marine Science `icesjms.bst`
+- Journal of Crustacean Biology `jcrustbiol.bst`
+- Methods in Ecology and Evolution `mee.bst`
+- Proceedings of the Royal Society B: Biological Sciences `prsb.bst`
+- Trends in Ecology and Evolution `tree.bst`
 
 These files are licensed under the [The LaTeX Project Public License].
 
