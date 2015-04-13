@@ -9,6 +9,13 @@ I haven't tested these .bst files extensively, but they were adequate for my
 needs writing manuscripts for these journals. They have mostly been tested with
 journal articles, technical reports, and books.
 
+All author-year style `.bst` files will require the natbib package to be loaded in the TeX preamble. For example:
+
+```tex
+\usepackage{natbib}
+\bibpunct{(}{)}{;}{a}{}{;}
+```
+
 Current journals included:
 - BioScience `bioscience.bst`
 - Canadian Journal of Fisheries and Aquatic Sciences `cjfas.bst`
