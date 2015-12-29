@@ -1,4 +1,4 @@
-%% Driver file to produce frontiersecolenv.bst from merlin.mbs
+%% Driver file to produce frontecolenv.bst from merlin.mbs
 %% Generated with makebst, version 4.1 (2003/09/08)
 %% Produced on 2013/08/30 at 13:52
 %% 
@@ -551,5 +551,5 @@ End of customized bst file
 % plntx,%: Use only Plain TeX
 %--------------------
   }}
-\generate{\file{frontiersecolenv.bst}{\MBopts}}
+\generate{\file{frontecolenv.bst}{\MBopts}}
 \endbatchfile

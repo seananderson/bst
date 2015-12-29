@@ -1,14 +1,14 @@
 %%
-%% This is file `frontiersecolenv.bst',
+%% This is file `frontecolenv.bst',
 %% generated with the docstrip utility.
 %%
 %% The original source files were:
 %%
-%% merlin.mbs  (with options: `ay,nat,nm-rvx,ed-rev,jnrlst,nmlm,x4,m3,mcite,mct-1,mct-x2,keyxyr,dt-beg,yr-per,note-yr,jxper,vol-bf,vnum-x,volp-sp,num-xser,jnm-x,btit-rm,bt-rm,add-pub,edparxc,bkedcap,in-col,ppx,ed,xedn,jabr,etal-it,nfss,')
+%% merlin.mbs  (with options: `ay,nat,seq-yr,nm-rvx,ed-rev,jnrlst,nmlm,x4,m3,mcite,mct-1,mct-x2,keyxyr,dt-beg,yr-per,note-yr,jxper,vol-bf,vnum-x,volp-sp,num-xser,jnm-x,btit-rm,bt-rm,add-pub,edparxc,bkedcap,in-col,ppx,ed,xedn,jabr,etal-it,nfss,')
 %% ----------------------------------------
 %% ***  ***
 %% 
-%% Copyright 1994-2007 Patrick W Daly
+%% Copyright 1994-2011 Patrick W Daly
  % ===============================================================
  % IMPORTANT NOTICE:
  % This bibliographic style (bst) file has been generated from one or
@@ -20,7 +20,7 @@
  % version 1 of the License, or any later version.
  % ===============================================================
  % Name and version information of the main mbs file:
- % \ProvidesFile{merlin.mbs}[2007/04/24 4.20 (PWD, AO, DPC)]
+ % \ProvidesFile{merlin.mbs}[2011/11/18 4.33 (PWD, AO, DPC)]
  %   For use with BibTeX version 0.99a or later
  %-------------------------------------------------------------------
  % This bibliography style file is intended for texts in ENGLISH
@@ -45,7 +45,7 @@
  %   \citep*{key} ==>>               (Jones, Baker, and Smith, 1990)
  %   \citep[chap. 2]{key} ==>>       (Jones et al., 1990, chap. 2)
  %   \citep[e.g.][]{key} ==>>        (e.g. Jones et al., 1990)
- %   \citep[e.g.][p. 32]{key} ==>>   (e.g. Jones et al., p. 32)
+ %   \citep[e.g.][p. 32]{key} ==>>   (e.g. Jones et al., 1990, p. 32)
  %   \citeauthor{key} ==>>           Jones et al.
  %   \citeauthor*{key} ==>>          Jones, Baker, and Smith
  %   \citeyear{key} ==>>             1990
@@ -166,17 +166,24 @@ FUNCTION {or}
   if$
 }
 STRINGS {z}
+
 FUNCTION {remove.dots}
 { 'z :=
-  ""
-  { z empty$ not }
-  { z #1 #1 substring$
-    z #2 global.max$ substring$ 'z :=
-    duplicate$ "." = 'pop$
-      { * }
-    if$
-  }
-  while$
+   ""
+   { z empty$ not }
+   { z #1 #2 substring$
+     duplicate$ "\." =
+       { z #3 global.max$ substring$ 'z :=  * }
+       { pop$
+         z #1 #1 substring$
+         z #2 global.max$ substring$ 'z :=
+         duplicate$ "." = 'pop$
+           { * }
+         if$
+       }
+     if$
+   }
+   while$
 }
 FUNCTION {new.block.checkb}
 { empty$
@@ -1322,9 +1329,10 @@ FUNCTION {sort.format.names}
           if$
           "   "  *
           namesleft #1 = t "others" = and
-            { "zzzzz" * }
-            { t sortify * }
+            { "zzzzz" 't := }
+            'skip$
           if$
+          t sortify *
         }
         { t sortify * }
       if$
@@ -1403,11 +1411,8 @@ FUNCTION {presort}
   'sort.label :=
   sort.label
   *
-  "    "
-  *
-  title field.or.null
-  sort.format.title
-  *
+  "    " * year field.or.null *
+  "    " * cite$ *
   #1 entry.max$ substring$
   'sort.key$ :=
 }
@@ -1415,17 +1420,30 @@ FUNCTION {presort}
 ITERATE {presort}
 SORT
 STRINGS { last.label next.extra }
-INTEGERS { last.extra.num number.label }
+INTEGERS { last.extra.num last.extra.num.extended last.extra.num.blank number.label }
 FUNCTION {initialize.extra.label.stuff}
 { #0 int.to.chr$ 'last.label :=
   "" 'next.extra :=
   #0 'last.extra.num :=
+  "a" chr.to.int$ #1 - 'last.extra.num.blank :=
+  last.extra.num.blank 'last.extra.num.extended :=
   #0 'number.label :=
 }
 FUNCTION {forward.pass}
 { last.label label =
     { last.extra.num #1 + 'last.extra.num :=
-      last.extra.num int.to.chr$ 'extra.label :=
+      last.extra.num "z" chr.to.int$ >
+       { "a" chr.to.int$ 'last.extra.num :=
+         last.extra.num.extended #1 + 'last.extra.num.extended :=
+       }
+       'skip$
+      if$
+      last.extra.num.extended last.extra.num.blank >
+        { last.extra.num.extended int.to.chr$
+          last.extra.num int.to.chr$
+          * 'extra.label := }
+        { last.extra.num int.to.chr$ 'extra.label := }
+      if$
     }
     { "a" chr.to.int$ 'last.extra.num :=
       "" 'extra.label :=
@@ -1456,12 +1474,9 @@ FUNCTION {bib.sort.order}
   "    "
   *
   year field.or.null sortify
+  swap$
   *
-  "    "
-  *
-  title field.or.null
-  sort.format.title
-  *
+  "    " * cite$ *
   #1 entry.max$ substring$
   'sort.key$ :=
 }
@@ -1487,4 +1502,4 @@ FUNCTION {end.bib}
 EXECUTE {end.bib}
 %% End of customized bst file
 %%
-%% End of file `frontiersecolenv.bst'.
+%% End of file `frontecolenv.bst'.
