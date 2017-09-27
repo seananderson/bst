@@ -84,7 +84,7 @@ End of customized bst file
 %>>ORDERING OF REFERENCES (if non-author/year and non-alph)
 %<<ORDERING OF REFERENCES (if author-year citations)
     %: (def) Alphabetical by all authors
-% seq-lab,%: By label (Jones before Jones and James before Jones et al)
+seq-lab,%: By label (Jones before Jones and James before Jones et al)
 % seq-key,%: By label and cite key instead of label and title, as above
 % seq-yr,%: Year ordered and then by authors (for publication lists)
 % seq-yrr,%: Reverse year ordered and then by authors (most recent first)
