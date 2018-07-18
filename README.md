@@ -26,6 +26,7 @@ Current journals included:
 - Proceedings of the Royal Society B: Biological Sciences `prsb.bst`
 - Trends in Ecology and Evolution `tree.bst`
 - Fish and Fisheries `fishfish.bst`
+- Fisheries Research `fishres.bst`
 
 These files are licensed under the [The LaTeX Project Public License].
 
