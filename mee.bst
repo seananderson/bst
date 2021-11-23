@@ -74,6 +74,7 @@ ENTRY
     type
     volume
     year
+    doi
   }
   {}
   { label extra.label sort.label short.list }
@@ -772,6 +773,15 @@ FUNCTION {format.journal.pages}
     }
   if$
 }
+FUNCTION {format.journal.doi}
+{
+    doi empty$
+    { "" }
+    { 
+        "https://dx.doi.org/" doi *
+    }
+    if$
+}
 FUNCTION {format.journal.eid}
 { eid "eid" bibinfo.check
   duplicate$ empty$ 'pop$
@@ -934,6 +944,7 @@ FUNCTION {article}
   if$
   new.block
   format.note output
+  format.journal.doi output
   fin.entry
 }
 FUNCTION {book}
